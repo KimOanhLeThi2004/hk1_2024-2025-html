@@ -7,9 +7,9 @@ group: getting-started
 
 We've designed and developed Bootstrap to work in a number of environments. Here are some of the best practices we've gathered from years of working on and using it ourselves.
 
-{% callout info %}
-**Heads up!** This copy is a work in progress.
-{% endcallout %}
+<div class="alert alert-info" role="alert">
+  <strong>Heads up!</strong> This copy is a work in progress.
+</div>
 
 ### General outline
 
@@ -18,3 +18,4 @@ We've designed and developed Bootstrap to work in a number of environments. Here
 - Building new CSS components
 - Working with flexbox
 - Ask in [Slack](https://bootstrap-slack.herokuapp.com/)
+
