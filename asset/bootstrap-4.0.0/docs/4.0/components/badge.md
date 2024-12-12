@@ -52,9 +52,13 @@ Unless the context is clear (as with the "Notifications" example, where it is un
 Add any of the below mentioned modifier classes to change the appearance of a badge.
 
 <div class="bd-example">
-  {% for color in site.data.theme-colors %}
-    <span class="badge badge-{{ color.name }}">{{ color.name | capitalize }}</span>
-  {% endfor %}
+  {% if site.data.theme-colors %}
+    {% for color in site.data.theme-colors %}
+      <span class="badge badge-{{ color.name }}">{{ color.name | capitalize }}</span>
+    {% endfor %}
+  {% else %}
+    <p>No theme colors found in the data file.</p>
+  {% endif %}
 </div>
 
 ## Pill badges
@@ -62,9 +66,13 @@ Add any of the below mentioned modifier classes to change the appearance of a ba
 Use the `.badge-pill` modifier class to make badges more rounded (with a larger `border-radius` and additional horizontal `padding`). Useful if you miss the badges from v3.
 
 <div class="bd-example">
-  {% for color in site.data.theme-colors %}
-    <span class="badge badge-pill badge-{{ color.name }}">{{ color.name | capitalize }}</span>
-  {% endfor %}
+  {% if site.data.theme-colors %}
+    {% for color in site.data.theme-colors %}
+      <span class="badge badge-pill badge-{{ color.name }}">{{ color.name | capitalize }}</span>
+    {% endfor %}
+  {% else %}
+    <p>No theme colors found in the data file.</p>
+  {% endif %}
 </div>
 
 ## Links
@@ -72,8 +80,11 @@ Use the `.badge-pill` modifier class to make badges more rounded (with a larger 
 Using the contextual `.badge-*` classes on an `<a>` element quickly provide _actionable_ badges with hover and focus states.
 
 <div class="bd-example">
-  {% for color in site.data.theme-colors %}
-    <a href="#" class="badge badge-{{ color.name }}">{{ color.name | capitalize }}</a>
-  {% endfor %}
+  {% if site.data.theme-colors %}
+    {% for color in site.data.theme-colors %}
+      <a href="#" class="badge badge-{{ color.name }}">{{ color.name | capitalize }}</a>
+    {% endfor %}
+  {% else %}
+    <p>No theme colors found in the data file.</p>
+  {% endif %}
 </div>
-
