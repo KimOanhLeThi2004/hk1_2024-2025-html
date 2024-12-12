@@ -10,36 +10,34 @@ toc: true
 
 Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the eight **required** contextual classes (e.g., `.alert-success`). For inline dismissal, use the [alerts jQuery plugin](#dismissing).
 
-<pre><code>
-{% for color in site.data.theme-colors %}
-<div class="alert alert-{{ color.name }}" role="alert">
-  This is a {{ color.name }} alert—check it out!
-</div>{% endfor %}
-</code></pre>
+{% highlight html %}
+<div class="alert alert-success" role="alert">
+  This is a success alert—check it out!
+</div>
+{% endhighlight %}
 
 ### Link color
 
 Use the `.alert-link` utility class to quickly provide matching colored links within any alert.
 
-<pre><code>
-{% for color in site.data.theme-colors %}
-<div class="alert alert-{{ color.name }}" role="alert">
-  This is a {{ color.name }} alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
-</div>{% endfor %}
-</code></pre>
+{% highlight html %}
+<div class="alert alert-success" role="alert">
+  This is a success alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+</div>
+{% endhighlight %}
 
 ### Additional content
 
 Alerts can also contain additional HTML elements like headings, paragraphs and dividers.
 
-<pre><code>
+{% highlight html %}
 <div class="alert alert-success" role="alert">
   <h4 class="alert-heading">Well done!</h4>
   <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
   <hr>
   <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
 </div>
-</code></pre>
+{% endhighlight %}
 
 ### Dismissing
 
@@ -53,14 +51,14 @@ Using the alert JavaScript plugin, it's possible to dismiss any alert inline. He
 
 You can see this in action with a live demo:
 
-<pre><code>
+{% highlight html %}
 <div class="alert alert-warning alert-dismissible fade show" role="alert">
   <strong>Holy guacamole!</strong> You should check in on some of those fields below.
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
-</code></pre>
+{% endhighlight %}
 
 ## JavaScript behavior
 
@@ -68,17 +66,17 @@ You can see this in action with a live demo:
 
 Enable dismissal of an alert via JavaScript:
 
-<pre><code>
+{% highlight js %}
 $('.alert').alert()
-</code></pre>
+{% endhighlight %}
 
 Or with `data` attributes on a button **within the alert**, as demonstrated above:
 
-<pre><code>
+{% highlight html %}
 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
   <span aria-hidden="true">&times;</span>
 </button>
-</code></pre>
+{% endhighlight %}
 
 Note that closing an alert will remove it from the DOM.
 
@@ -90,9 +88,9 @@ Note that closing an alert will remove it from the DOM.
 | `$().alert('close')` | Closes an alert by removing it from the DOM. If the `.fade` and `.show` classes are present on the element, the alert will fade out before it is removed. |
 | `$().alert('dispose')` | Destroys an element's alert. |
 
-<pre><code>
+{% highlight js %}
 $(".alert").alert('close')
-</code></pre>
+{% endhighlight %}
 
 ### Events
 
@@ -103,8 +101,8 @@ Bootstrap's alert plugin exposes a few events for hooking into alert functionali
 | `close.bs.alert` | This event fires immediately when the <code>close</code> instance method is called. |
 | `closed.bs.alert` | This event is fired when the alert has been closed (will wait for CSS transitions to complete). |
 
-<pre><code>
+{% highlight js %}
 $('#myAlert').on('closed.bs.alert', function () {
   // do something…
 })
-</code></pre>
+{% endhighlight %}
