@@ -76,3 +76,4 @@ Using the contextual `.badge-*` classes on an `<a>` element quickly provide _act
     <a href="#" class="badge badge-{{ color.name }}">{{ color.name | capitalize }}</a>
   {% endfor %}
 </div>
+
